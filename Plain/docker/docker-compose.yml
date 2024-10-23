@@ -1,0 +1,30 @@
+version: '3'
+services:
+  web:
+    image: nginx:1.18.0
+    ports:
+      - "8080:80"
+    volumes:
+      - ${NGINX_CONF_HOST}:${NGINX_CONF_CONTAINER}
+      - ${PROJECT_SRC}:${NGINX_APP_PATH}
+
+  php:
+    build:
+      context: ..
+      dockerfile: ./docker/php/Dockerfile
+    volumes:
+      - ${PROJECT_SRC}:${NGINX_APP_PATH}
+
+  mysql:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - mysqldata:/var/lib/mysql
+    ports:
+      - 3306:3306
+volumes:
+  mysqldata: {}
