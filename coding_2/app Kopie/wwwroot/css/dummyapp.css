@@ -1,0 +1,24 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  font-family:"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+body > div.navbar {
+	border-bottom:1px solid #eee;
+	box-shadow:0 0 3px rgba(0,0,0,0.1);
+	background-color:#fff;
+}
+div.navbar li.active {
+	background-color:#eee;
+}

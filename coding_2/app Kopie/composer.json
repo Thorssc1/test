@@ -1,0 +1,24 @@
+{
+	"name": "blueend/recruitment-app",
+	"description": "Dummy App",
+	"type": "project",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "BLUEEND AG",
+			"email": "info@xelos.net"
+		}
+	],
+	"repositories": [{
+		"type": "composer",
+		"url": "https://repo.xelos.net/composer/"
+	}],
+	"require": {
+		"ext-gettext":"*",
+		"ext-json":"*",
+		"ext-pdo":"*"
+	},
+	"require-dev": {
+		"symfony/var-dumper": "^5.4"
+	}
+}
